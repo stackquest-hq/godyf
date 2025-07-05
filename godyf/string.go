@@ -82,3 +82,13 @@ func (s *String) hexStringData() []byte {
 	buf.WriteByte('>')
 	return buf.Bytes()
 }
+
+// GetObject returns the underlying Object struct
+func (s *String) GetObject() *Object {
+	return &s.Object
+}
+
+// SetObject sets the underlying Object struct
+func (s *String) SetObject(obj *Object) {
+	s.Object = *obj
+}

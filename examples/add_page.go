@@ -13,7 +13,7 @@ func main() {
 
 	page := godyf.NewDictionary(map[string]interface{}{
 		"Type":     "/Page",
-		"Parent":   string(document.Pages.Refrence()),
+		"Parent":   string(document.Pages.Reference()),
 		"MediaBox": godyf.NewArray(0, 0, 595, 842),
 	})
 
@@ -27,7 +27,7 @@ func main() {
 	}
 	defer file.Close()
 
-	err = document.Write(file, "1.7", nil, false)
+	err = document.Write(file, nil, nil, false)
 	if err != nil {
 		fmt.Printf("Error writing PDF: %v\n", err)
 		return

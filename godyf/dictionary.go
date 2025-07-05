@@ -33,3 +33,13 @@ func (d *Dictionary) Data() []byte {
 	buf.WriteString(" >>")
 	return buf.Bytes()
 }
+
+// GetObject returns the underlying Object struct
+func (d *Dictionary) GetObject() *Object {
+	return &d.Object
+}
+
+// SetObject sets the underlying Object struct
+func (d *Dictionary) SetObject(obj *Object) {
+	d.Object = *obj
+}

@@ -177,6 +177,11 @@ func (s *Stream) FillStrokeAndClose(evenOdd bool) {
 	}
 }
 
+// GetObject returns the underlying Object struct
+func (s *Stream) GetObject() *Object {
+	return &s.Object
+}
+
 // InlineImage adds an inline image
 func (s *Stream) InlineImage(width, height int, colorSpace string, bpc int, rawData []byte) {
 	var data []byte
@@ -373,4 +378,9 @@ func (s *Stream) Stroke() {
 // StrokeAndClose strokes and closes path
 func (s *Stream) StrokeAndClose() {
 	s.Stream = append(s.Stream, "s")
+}
+
+// SetObject sets the underlying Object struct
+func (s *Stream) SetObject(obj *Object) {
+	s.Object = *obj
 }

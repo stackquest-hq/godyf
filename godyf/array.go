@@ -67,3 +67,13 @@ func (a *Array) Set(index int, element interface{}) {
 		a.Elements[index] = element
 	}
 }
+
+// GetObject returns the underlying Object struct
+func (a *Array) GetObject() *Object {
+	return &a.Object
+}
+
+// SetObject sets the underlying Object struct
+func (a *Array) SetObject(obj *Object) {
+	a.Object = *obj
+}
