@@ -77,3 +77,8 @@ func (a *Array) GetObject() *Object {
 func (a *Array) SetObject(obj *Object) {
 	a.Object = *obj
 }
+
+// Compressible returns whether the array can be included in an object stream
+func (a *Array) Compressible() bool {
+	return a.Object.Generation == 0
+}

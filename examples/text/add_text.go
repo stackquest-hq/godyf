@@ -11,18 +11,20 @@ import (
 func main() {
 	document := pdf.NewPDF()
 	font := godyf.NewDictionary(map[string]interface{}{
-		"Type":     "/Font",
-		"Subtype":  "/Type1",
-		"Name":     "/F1",
-		"BaseFont": "/Helvetica",
-		"Encoding": "/MacRomanEncoding",
+		"Type":    "/Font",
+		"Subtype": "/Type1",
+		"Name":    "/F1",
+		// "BaseFont": "/Helvetica",
+		// "Encoding": "/MacRomanEncoding",
+		"BaseFont": "/Times-Roman",
+		"Encoding": "/WinAnsiEncoding",
 	})
 	document.AddObject(font)
 	text := godyf.NewStream(nil, nil, false)
 	text.BeginText()
 	text.SetFontSize("F1", 20)
 	text.SetTextMatrix(1, 0, 0, 1, 10, 90)
-	text.ShowTextString("Bœuf grillé & café")
+	text.ShowTextString("Hellow World!")
 	text.EndText()
 	document.AddObject(text)
 	document.AddPage(godyf.NewDictionary(map[string]interface{}{

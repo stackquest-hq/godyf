@@ -43,3 +43,8 @@ func (d *Dictionary) GetObject() *Object {
 func (d *Dictionary) SetObject(obj *Object) {
 	d.Object = *obj
 }
+
+// Compressible returns whether the dictionary can be included in an object stream
+func (d *Dictionary) Compressible() bool {
+	return d.Object.Generation == 0
+}

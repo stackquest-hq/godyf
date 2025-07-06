@@ -92,3 +92,8 @@ func (s *String) GetObject() *Object {
 func (s *String) SetObject(obj *Object) {
 	s.Object = *obj
 }
+
+// Compressible returns whether the string can be included in an object stream
+func (s *String) Compressible() bool {
+	return s.Object.Generation == 0
+}

@@ -17,6 +17,7 @@ type PDFObject interface {
 	Data() []byte
 	GetObject() *Object
 	SetObject(*Object)
+	Compressible() bool
 }
 
 // NewObject creates a new PDF object with default values
